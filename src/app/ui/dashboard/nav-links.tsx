@@ -16,7 +16,7 @@ export default function Sidebar() {
   const pathname = usePathname() || "";
 
   return (
-    <nav className={clsx("h-screen py-4 w-48 p-1 bg-white overflow-y-hidden")}> 
+    <nav className={clsx("h-screen py-4 w-48 p-1 bg-white dark:bg-gray-500 overflow-y-hidden")}> 
       <ul className="space-y-2 mt-4">
         {links.map((link) => {
           const LinkIcon = link.icon;

@@ -1,30 +1,29 @@
 import Image from "next/image";
-import { PowerIcon, Bars3Icon } from "@heroicons/react/24/outline";
+// import { PowerIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { SignOut } from "@/ui/auth/signout-button";
+import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
 
 export default function Header() {
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-neutral-300">
-      <div className="mx-auto flex h-14 md:h-16 items-center justify-between px-6 sm:px-8 lg:px-10">
-        <div className="flex space-x-4 sm:space-x-6 items-center">
-          <div className="flex items-center space-x-2">
-            <Image
-              priority
-              src="/assets/images/next.svg"
-              height={100}
-              width={100}
-              alt="Template"
-              className="h-10 w-20"
-            />
-            <p className="text-lg md:text-2xl">Template App</p>
-          </div>
+    <div className="fixed inset-x-0 top-0 z-10 border-b border-gray-200 dark:border-white/10">
+      <div className="bg-white dark:bg-gray-500">
+        <div className="flex h-14 items-center justify-between gap-8 px-4 sm:px-6">
+          <Image
+            priority
+            src="/assets/images/next.svg"
+            height={100}
+            width={100}
+            alt="Template"
+            className="h-10 w-20"
+          />
+          <p className="text-lg">Template App</p>
+          <SignOut />
         </div>
+        <div className="flex h-14 items-center border-t border-gray-950/5 bg-white px-4 sm:px-6 lg:hidden dark:border-white/10 dark:bg-gray-950">
+          <Bars3BottomLeftIcon className="w-6" />
 
-        <div className="flex items-center space-x-3">
-          <button className="flex items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-gray-100 hover:text-gray-600 md:flex-none md:justify-start md:p-2 md:px-3">
-            <PowerIcon className="w-6" />
-          </button>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }

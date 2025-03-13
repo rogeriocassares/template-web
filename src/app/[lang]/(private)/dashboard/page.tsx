@@ -1,8 +1,5 @@
-import { auth } from "@/auth"
-
 export default async function Page() {
-  const session = await auth()
   return (
-    <h1 className="">Dashboard Home</h1>
+    <h1 className="bg-white dark:bg-gray-300">Dashboard Home</h1>
   );
 }

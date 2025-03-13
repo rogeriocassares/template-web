@@ -1,21 +1,20 @@
 import Image from "next/image";
-import { Button } from "../../../ui/button";
-import { redirect } from "next/navigation";
-import { signIn, auth, providerMap } from "@/auth";
-import { AuthError } from "next-auth";
+// import { Button } from "../../../ui/button";
+// import { redirect } from "next/navigation";
+// import { signIn, auth, providerMap } from "@/auth";
+// import { AuthError } from "next-auth";
 import { noto_serif } from "../../../ui/fonts";
+import { SignIn } from "@/app/ui/auth/signin-button";
 
+export default async function Page() {
+//   {
+//   // searchParams,
+// }: {
+//   // searchParams: Promise<{ callbackUrl: string | undefined }>;
+// }
+  // const SIGNIN_ERROR_URL = "/";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{ callbackUrl: string | undefined }>;
-}) {
-
-
-  const SIGNIN_ERROR_URL = "/";
-
-  const sP = await searchParams;
+  // const sP = await searchParams;
 
   return (
     <main className="min-h-screen flex flex-col justify-center items-center p-8">
@@ -31,15 +30,17 @@ export default async function Page({
             height={160}
           />
         </div>
-        
+
         {/* Title container with more spacing */}
         <div className="flex flex-col items-center justify-center space-y-6">
-            <h1 className={`text-maua_blue text-4xl sm:text-5xl font-medium tracking-wider ${noto_serif.className} antialiased`}>
-              Login Template
-            </h1>
+          <h1
+            className={`text-maua_blue text-4xl sm:text-5xl font-medium tracking-wider ${noto_serif.className} antialiased`}
+          >
+            Login Template
+          </h1>
 
           {/* Button and Sign-in section with increased spacing */}
-          <div className="space-y-5">
+          {/* <div className="space-y-5">
             {Object.values(providerMap).map((provider) => (
               <form
                 key={provider.id}
@@ -68,9 +69,9 @@ export default async function Page({
                 </Button>
               </form>
             ))}
-          </div>
+          </div> */}
+          <SignIn />
         </div>
-
       </div>
     </main>
   );
