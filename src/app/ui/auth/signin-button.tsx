@@ -4,7 +4,13 @@ import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 
-export function SignIn() {
+// export function SignIn() {
+
+  export function SignIn({
+    // provider,
+    ...props
+  }: { provider?: string } & React.ComponentPropsWithRef<typeof Button>) {
+    
   const SIGNIN_ERROR_URL = "/";
 
   return (
@@ -29,6 +35,7 @@ export function SignIn() {
           }}
         >
           <Button
+            {...props}
             className="space-x-5 rounded-full bg-white px-6 py-3 sm:px-7 sm:py-4 transition duration-150 ease-in hover:bg-neutral-300"
             style={{ boxShadow: "8px 8px 25px rgba(0,0,0,.2)" }}
           >

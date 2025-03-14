@@ -1,12 +1,23 @@
 import Header from "@/ui/dashboard/header";
-import Sidenav from "@/ui/dashboard/sidenav";
+import { SidenavDesktop, SidenavMobile } from "@/ui/dashboard/sidenav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col">
+    <>
       <Header />
-      <Sidenav />
-      {children}
-    </div>
+  
+    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+        <div className="hidden md:block flex-none mt-32 w-64">
+          <SidenavDesktop />
+        </div>
+        <div className="flex-grow md:overflow-y-auto mt-32">
+          {children}
+        </div>
+        {/* <div className="md:hidden w-full flex-none md:w-64 "> */}
+        <div className="md:hidden">
+          <SidenavMobile />
+        </div>
+      </div>
+      </>
   );
 }

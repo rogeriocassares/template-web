@@ -5,13 +5,15 @@ import { auth } from "@/auth";
 
 export default async function Page() {
   const session = await auth();
+  if (!session?.user) return null
+
   return (
     <>
       <Head>
         <title>SmartCampus Mauá</title>
       </Head>
-      <div className="flex min-h-screen items-center justify-center sm:p-6 md:p-8 lg:p-12">
-        <div className="rounded-xl bg-white shadow-xl p-6 sm:p-8 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/3 animate-fade-in">
+      <div className="flex min-h-screen items-center justify-center sm:p-6 md:p-8">
+        <div className="rounded-xl bg-white shadow-xl p-6 sm:p-8 w-full sm:w-3/4 md:w-2/3 animate-fade-in">
           <div className="mb-8">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800">
               <span className="font-medium">{session?.user.name}</span>.
