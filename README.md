@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 
 
-## Getting Started
+First, Clone this repository the dependencies:
+```bash
+https://github.com/rogeriocassares/template-web.git
+```
 
-First, run the development server:
+Install the dependencies:
+```bash
+cd template-web
+pnpm i
+```
+
+Then, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
+```
+
+To open in VSCode:
+```bash
+code .
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[lang]/(private)/dashboard/layout.tsx
+[lang]/(private)/dashboard/page.tsx
+[lang]/(private)/dashboard/apps/page.tsx
+[lang]/(private)/dashboard/settings/page.tsx
 
-## Learn More
+[lang]/(public)/(overview)/layout.tsx
+[lang]/(public)/(overview)/page.tsx
+[lang]/(public)/login/page.tsx
 
-To learn more about Next.js, take a look at the following resources:
+[lang]/dictionaries/ar-iq.json
+[lang]/dictionaries/en-us.json
+[lang]/dictionaries/es-es.json
+[lang]/dictionaries/pt-br.json
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[lang]/langDictionary.ts
+[lang]/layout.tsx
+[lang]/not-found.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ui/auth/signin-button.tsx
+ui/auth/signout-button.tsx
+ui/auth/username-button.tsx
 
-## Deploy on Vercel
+ui/dashboard/nav-links.tsx
+ui/dashboard/sidenav.tsx
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ui/login/
+ui/overview
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ui/header.tsx
+
+
+auth.ts
+locale.ts
+middleware.ts
+
+
+api/auth/[...nextauth]/route.ts ->  Refer to the auth.ts
+
+lib/actions -> CRUD and Validate forms with zod
+lib/data -> Fetch data from SQL/API
+lib/definitions -> define the type of data to fetch
+lib/placeholder-data -> synthetic data
+lib/utils -> general format/conversion functions
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@ import Image from "next/image";
 // import { PowerIcon, Bars3Icon } from "@heroicons/react/24/outline";
 // import { SignOut } from "@/ui/auth/signout-button";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
-import UserButton from "../user-button";
+import UserButton from "@/app/ui/auth/user-button";
 
 export default function Header() {
   return (

@@ -1,4 +1,4 @@
-import Header from "@/ui/dashboard/header";
+import Header from "@/ui/header";
 import { SidenavDesktop, SidenavMobile } from "@/ui/dashboard/sidenav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
