@@ -4,19 +4,26 @@ import * as Icons from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 
 const links = [
   { name: "Home", href: "/dashboard/", icon: Icons.BellAlertIcon },
   { name: "Apps", href: "/dashboard/apps", icon: Icons.CubeIcon },
   { name: "Settings", href: "/dashboard/settings", icon: Icons.Cog6ToothIcon },
-  { name: "External Link", href: "https://maua.br", icon: Icons.DocumentIcon, external: true, blank: true },
+  {
+    name: "External Link",
+    href: "https://maua.br",
+    icon: Icons.DocumentIcon,
+    external: true,
+    blank: true,
+  },
 ];
 
 // export default function Sidebar() {
 //   const pathname = usePathname() || "";
 
 //   return (
-//     <nav className={clsx("h-screen py-4 w-48 p-1 bg-white dark:bg-gray-500 overflow-y-hidden")}> 
+//     <nav className={clsx("h-screen py-4 w-48 p-1 bg-white dark:bg-gray-500 overflow-y-hidden")}>
 //       <ul className="space-y-2 mt-4">
 //         {links.map((link) => {
 //           const LinkIcon = link.icon;
@@ -53,8 +60,12 @@ const links = [
 //   );
 // }
 
-export default function NavLinks() {
+export default function NavLinks({ state }: { state: boolean }) {
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  useEffect(() => {
+    setOpen(state);
+  }, [setOpen, state]);
   return (
     <>
       {links.map((link) => {
@@ -64,18 +75,17 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-300 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+              "flex h-[48px] grow items-center dark:text-black justify-center gap-2 rounded-md bg-gray-300 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               {
                 "bg-gray-400 text-blue-600": pathname === link.href,
-              }
+              },
             )}
           >
             <LinkIcon className="w-6" />
-            <p className="hidden md:block">{link.name}</p>
+            {state ? <p className="hidden md:block">{link.name}</p> : <></>}
           </Link>
         );
       })}
     </>
   );
 }
-
