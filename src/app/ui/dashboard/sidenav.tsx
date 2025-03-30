@@ -2,7 +2,7 @@ import NavLinks from "./nav-links";
 
 export function SidenavMobile() {
   return (
-    <div className="flex grow flex-row justify-between space-x-2">
+    <div className="flex grow flex-row justify-between space-x-2 md:hidden fixed bottom-0 left-0 right-0 ">
       <NavLinks state={false} />
     </div>
   );
