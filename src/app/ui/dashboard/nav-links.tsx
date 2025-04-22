@@ -61,11 +61,7 @@ const links = [
 // }
 
 export default function NavLinks({ state }: { state: boolean }) {
-  const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  useEffect(() => {
-    setOpen(state);
-  }, [setOpen, state]);
   return (
     <>
       {links.map((link) => {
@@ -75,14 +71,24 @@ export default function NavLinks({ state }: { state: boolean }) {
             key={link.name}
             href={link.href}
             className={clsx(
-              "flex h-[48px] grow items-center dark:text-black justify-center gap-2 rounded-md bg-gray-300 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+              "flex h-[48px] grow items-center dark:text-black justify-center rounded-md bg-gray-300 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:justify-start md:p-2 md:px-3",
               {
                 "bg-gray-400 text-blue-600": pathname === link.href,
+              },
+              {
+                "flex-row gap-2": state,
+              },
+              {
+                "flex-col text-xs": !state,
               },
             )}
           >
             <LinkIcon className="w-6" />
-            {state ? <p className="hidden md:block">{link.name}</p> : <></>}
+            {state ? (
+              <p className="hidden md:block">{link.name.split(" ")[0]}</p>
+            ) : (
+              <p className="hidden md:block">{link.name.split(" ")[0]}</p>
+            )}
           </Link>
         );
       })}
