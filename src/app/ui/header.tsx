@@ -5,6 +5,7 @@ import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
 import UserButton from "@/app/ui/auth/user-button";
 import { SidenavDesktop } from "./dashboard/sidenav";
 import { SidenavWrapper } from "./dashboard/sidenav-wrapper";
+import { NavMenu } from "./public/NavMenu";
 
 export default function Header() {
   return (
@@ -24,7 +25,10 @@ export default function Header() {
           </div>
           <p className="text-lg">Template App</p>
           {/* <SignOut /> */}
-          <UserButton />
+          <div className="flex flex-row gap-3">
+            <UserButton />
+            <NavMenu />
+          </div>
         </div>
       </div>
     </div>

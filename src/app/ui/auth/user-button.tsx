@@ -15,18 +15,22 @@ import {
 // import { SignIn } from "@/ui/auth/signin-button";
 import { SignOut } from "@/ui/auth/signout-button";
 import Link from "next/link";
+import { UserRound } from "lucide-react";
 
 export default async function UserButton() {
   const session = await auth();
-  if (!session?.user) return (<Link
-    className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-    href={"/api/auth/signin"}
-    // target="_blank"
-    // rel="noopener noreferrer"
-  >
-    Login
-  </Link>)
-  
+  if (!session?.user)
+    return (
+      <Link
+        className=""
+        href={"/api/auth/signin"}
+        // target="_blank"
+        // rel="noopener noreferrer"
+      >
+        <UserRound />
+      </Link>
+    );
+
   // <SignIn />;
   return (
     <div className="flex items-center gap-2">
@@ -63,7 +67,7 @@ export default async function UserButton() {
           <DropdownMenuItem>
             {/* DISCOVER WHY INSIDE DROPDOWNMENUITEM THE ACTION SIGNOUT NOT WORKS */}
           </DropdownMenuItem>
-            <SignOut />
+          <SignOut />
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

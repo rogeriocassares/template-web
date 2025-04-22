@@ -1,3 +1,4 @@
+import { NavMenu } from "@/app/ui/public/NavMenu";
 import Header from "@/ui/header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
