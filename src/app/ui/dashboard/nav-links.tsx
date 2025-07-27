@@ -4,19 +4,20 @@ import * as Icons from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 
 const links = [
-  { name: "Home", href: "/dashboard/", icon: Icons.BellAlertIcon },
-  { name: "Apps", href: "/dashboard/apps", icon: Icons.CubeIcon },
-  { name: "Settings", href: "/dashboard/settings", icon: Icons.Cog6ToothIcon },
-  {
-    name: "External Link",
-    href: "https://maua.br",
-    icon: Icons.DocumentIcon,
-    external: true,
-    blank: true,
-  },
+  // { name: "Home", href: "/dashboard/", icon: Icons.BellAlertIcon },
+  // { name: "Apps", href: "/dashboard/apps", icon: Icons.CubeIcon },
+  // { name: "Settings", href: "/dashboard/settings", icon: Icons.Cog6ToothIcon },
+  // {
+  //   name: "External Link",
+  //   href: "https://maua.br",
+  //   icon: Icons.DocumentIcon,
+  //   external: true,
+  //   blank: true,
+  // },
+    { name: "Online", href: "/dashboard/online", icon: Icons.Cog6ToothIcon },
+
 ];
 
 // export default function Sidebar() {
