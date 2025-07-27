@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import mqtt from "mqtt";
 
 interface MqttFields {
-  [key: string]: unknown | null;
+  [key: string]: unknown;
 }
 
 interface MqttTags {
