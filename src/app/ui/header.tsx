@@ -8,7 +8,7 @@ export default function Header({ isDashboard }: { isDashboard?: boolean }) {
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-10 border-b border-gray-200 dark:border-white/10">
-        <div className="bg-white dark:bg-gray-500">
+        <div className="bg-white dark:bg-slate-900">
           <div className="flex h-14 items-center justify-between gap-8 px-4 md:px-6">
             <div className="flex flex-row gap-5">
               <Image
@@ -21,7 +21,7 @@ export default function Header({ isDashboard }: { isDashboard?: boolean }) {
               />
             </div>
 
-            <p className="text-lg">Template App</p>
+            <strong className="text-lg">REAL TIME DASHBOARD</strong>
             {/* <SignOut /> */}
             <div className="flex flex-row gap-3">
               <UserButton />
